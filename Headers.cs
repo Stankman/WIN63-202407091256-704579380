@@ -484,8 +484,8 @@ public static class MessageComposer
     public const int NavigatorSettingsComposer = 895;
     public const int OfficialRoomsComposer = 215;
     public const int PopularRoomTagsResultComposer = 3210;
-    public const int RoomEventCancelEvent = 805;
-    public const int RoomEventEvent = 3037;
+    public const int RoomEventCancelComposer = 805;
+    public const int RoomEventComposer = 3037;
     public const int RoomInfoUpdatedComposer = 1773;
     public const int RoomRatingComposer = 1183;
     public const int UserEventCatsEvent = 804;
@@ -505,8 +505,6 @@ public static class MessageComposer
     public const int WiredRewardResultMessageComposer = 1758;
     public const int WiredSaveSuccessComposer = 1373;
     public const int WiredValidationErrorComposer = 3766;
-
-    public static int RoomEventComposer { get; internal set; }
 }
 
 [PublicAPI]
