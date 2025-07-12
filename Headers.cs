@@ -470,7 +470,7 @@ public static class MessageComposer
     public const int UserUpdateMessageComposer = 3911;
     public const int WiredMovementsMessageComposer = 3000;
     public const int CanCreateRoomComposer = 3627;
-    public const int CanCreateRoomComposerEvent = 1722;
+    public const int CanCreateRoomEventEvent = 1722;
     public const int CategoriesWithVisitorCountComposer = 965;
     public const int CompetitionRoomsDataMessageComposer = 739;
     public const int ConvertedRoomIdComposer = 574;
@@ -484,11 +484,11 @@ public static class MessageComposer
     public const int NavigatorSettingsComposer = 895;
     public const int OfficialRoomsComposer = 215;
     public const int PopularRoomTagsResultComposer = 3210;
-    public const int RoomComposerCancelEvent = 805;
-    public const int RoomComposerEvent = 3037;
+    public const int RoomEventCancelEvent = 805;
+    public const int RoomEventEvent = 3037;
     public const int RoomInfoUpdatedComposer = 1773;
     public const int RoomRatingComposer = 1183;
-    public const int UserComposerCatsEvent = 804;
+    public const int UserEventCatsEvent = 804;
     public const int UserFlatCatsComposer = 523;
     public const int FurniListAddOrUpdateComposer = 3595;
     public const int FurniListComposer = 3550;
@@ -935,7 +935,7 @@ public enum MessageEvent
     SaveRoomSettingsMessageEvent = 966,
     UpdateRoomCategoryAndTradeSettingsEvent = 201,
     UpdateRoomFilterMessageEvent = 1847,
-    RequestFurniInventoryEveGetGuestRoomMessagent = 3181,
+    RequestFurniInventoryEvent = 3181,
     RequestFurniInventoryWhenNotInRoomEvent = 3468,
     RequestRoomPropertySet = 2982,
     Game2GetFriendsLeaderboardEvent = 1959,
