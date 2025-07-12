@@ -470,7 +470,7 @@ public static class MessageComposer
     public const int UserUpdateMessageComposer = 3911;
     public const int WiredMovementsMessageComposer = 3000;
     public const int CanCreateRoomComposer = 3627;
-    public const int CanCreateRoomEventEvent = 1722;
+    public const int CanCreateRoomEventComposer = 1722;
     public const int CategoriesWithVisitorCountComposer = 965;
     public const int CompetitionRoomsDataMessageComposer = 739;
     public const int ConvertedRoomIdComposer = 574;
@@ -488,7 +488,7 @@ public static class MessageComposer
     public const int RoomEventComposer = 3037;
     public const int RoomInfoUpdatedComposer = 1773;
     public const int RoomRatingComposer = 1183;
-    public const int UserEventCatsEvent = 804;
+    public const int UserEventCatsComposer = 804;
     public const int UserFlatCatsComposer = 523;
     public const int FurniListAddOrUpdateComposer = 3595;
     public const int FurniListComposer = 3550;
