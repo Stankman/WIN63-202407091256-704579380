@@ -18,4 +18,4 @@ public class UserEventCatsSerializer() : AbstractSerializer<UserEventCatsMessage
         }
     }
 
-} 
+}

@@ -1,8 +1,6 @@
-﻿using System.IO;
-using Turbo.Core.Packets.Messages;
+﻿using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Incoming.Room.Engine;
 using Turbo.Packets.Parsers;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Turbo.WIN63202407091256704579380.Parsers.Room.Engine;
 public class PlaceObjectMessageParser : AbstractParser<PlaceObjectMessage>
@@ -11,9 +9,9 @@ public class PlaceObjectMessageParser : AbstractParser<PlaceObjectMessage>
     {
         string data = packet.PopString();
         string[] parts = data.Split(" ");
-        if(int.TryParse(parts[0], out int id) && parts.Length > 1)
+        if (int.TryParse(parts[0], out int id) && parts.Length > 1)
         {
-            if(parts[1].StartsWith(":"))
+            if (parts[1].StartsWith(":"))
             {
                 return new PlaceObjectMessage
                 {

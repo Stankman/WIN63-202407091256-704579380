@@ -20,7 +20,7 @@ public class NavigatorMetaDataSerializer() : AbstractSerializer<NavigatorMetaDat
         foreach (var context in message.TopLevelContexts)
         {
             packet.WriteString(context.SearchCode);
-            
+
             packet.WriteInteger(context.SavedSearches?.Count ?? 0);
             foreach (var savedSearch in context.SavedSearches ?? new List<INavigatorSavedSearch>())
             {

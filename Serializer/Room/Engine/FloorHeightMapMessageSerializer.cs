@@ -11,7 +11,7 @@ public class FloorHeightMapMessageSerializer() : AbstractSerializer<FloorHeightM
         packet.WriteBoolean(message.IsZoomedIn);
         packet.WriteInteger(message.WallHeight);
         packet.WriteString(message.RoomModel.Model);
-        
+
         //TODO: Include the area hide data count foreach (var area in message.AreaHideData) area.Serialize(packet);
         packet.WriteInteger(0);
     }

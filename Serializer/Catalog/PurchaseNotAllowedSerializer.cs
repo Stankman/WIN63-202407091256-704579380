@@ -7,6 +7,6 @@ public class PurchaseNotAllowedSerializer() : AbstractSerializer<PurchaseNotAllo
 {
     protected override void Serialize(IServerPacket packet, PurchaseNotAllowedMessage message)
     {
-        packet.WriteInteger((int) message.ErrorCode);
+        packet.WriteInteger((int)message.ErrorCode);
     }
 }

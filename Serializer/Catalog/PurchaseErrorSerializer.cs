@@ -7,6 +7,6 @@ public class PurchaseErrorSerializer() : AbstractSerializer<PurchaseErrorMessage
 {
     protected override void Serialize(IServerPacket packet, PurchaseErrorMessage message)
     {
-        packet.WriteInteger((int) message.ErrorCode);
+        packet.WriteInteger((int)message.ErrorCode);
     }
 }

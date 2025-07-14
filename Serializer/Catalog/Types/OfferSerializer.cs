@@ -6,7 +6,7 @@ namespace Turbo.WIN63202407091256704579380.Serializer.Catalog.Types;
 public class OfferSerializer
 {
     //TODO Silver not required on PurchaseOKMessage 
-    public static void Serialize(IServerPacket packet, ICatalogOffer offer, bool doExtra, bool addSilver) 
+    public static void Serialize(IServerPacket packet, ICatalogOffer offer, bool doExtra, bool addSilver)
     {
         packet.WriteInteger(offer.Id);
         packet.WriteString(offer.LocalizationId);
@@ -14,8 +14,8 @@ public class OfferSerializer
         packet.WriteInteger(offer.CostCredits);
         packet.WriteInteger(offer.CostCurrency);
         packet.WriteInteger(offer.CurrencyType ?? -1);
-        
-        if(addSilver) packet.WriteInteger(0); //Cost Silver - REDO THIS PART
+
+        if (addSilver) packet.WriteInteger(0); //Cost Silver - REDO THIS PART
 
         packet.WriteBoolean(offer.CanGift);
         packet.WriteInteger(offer.Products.Count);

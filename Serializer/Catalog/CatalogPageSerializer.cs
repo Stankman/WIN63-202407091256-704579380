@@ -32,7 +32,7 @@ public class CatalogPageSerializer() : AbstractSerializer<CatalogPageMessage>(Me
         packet.WriteInteger(message.OfferId);
 
         packet.WriteBoolean(message.AcceptSeasonCurrencyAsCredits);
-        
+
         packet.WriteInteger(message.FrontPageItems.Count);
 
         foreach (var item in message.FrontPageItems)

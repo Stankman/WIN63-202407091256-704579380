@@ -9,7 +9,7 @@ public class FurnitureAliasesMessageSerializer() : AbstractSerializer<FurnitureA
     protected override void Serialize(IServerPacket packet, FurnitureAliasesMessage message)
     {
         packet.WriteInteger(message.Aliases.Count);
-        foreach(var entry in message.Aliases)
+        foreach (var entry in message.Aliases)
         {
             packet.WriteString(entry.Key);
             packet.WriteString(entry.Value);

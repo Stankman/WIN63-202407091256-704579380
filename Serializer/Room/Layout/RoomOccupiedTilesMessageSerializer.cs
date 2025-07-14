@@ -1,5 +1,4 @@
-﻿using Turbo.Core.Database.Entities.Room;
-using Turbo.Core.Game.Rooms.Mapping;
+﻿using Turbo.Core.Game.Rooms.Mapping;
 using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.Room.Layout;
 using Turbo.Packets.Serializers;
@@ -11,7 +10,7 @@ public class RoomOccupiedTilesMessageSerializer() : AbstractSerializer<RoomOccup
     protected override void Serialize(IServerPacket packet, RoomOccupiedTilesMessage message)
     {
         List<IRoomTile> tiles = message.OccupiedTiles;
-        
+
         for (int i = 0; i < tiles.Count; i++)
         {
             IRoomTile tile = tiles[i];
@@ -19,6 +18,6 @@ public class RoomOccupiedTilesMessageSerializer() : AbstractSerializer<RoomOccup
                 .WriteInteger(tile.Location.Y)
                 .WriteInteger((int)tile.Location.Rotation);
         }
-        
+
     }
 }

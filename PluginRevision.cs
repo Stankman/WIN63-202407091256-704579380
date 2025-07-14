@@ -1,7 +1,5 @@
-﻿using System.Reflection.PortableExecutable;
-using Turbo.Core.Packets.Messages;
+﻿using Turbo.Core.Packets.Messages;
 using Turbo.Core.Packets.Revisions;
-using Turbo.Packets.Incoming.Catalog;
 using Turbo.Packets.Outgoing.Advertising;
 using Turbo.Packets.Outgoing.Availability;
 using Turbo.Packets.Outgoing.CallForHelp;
@@ -88,8 +86,6 @@ using Turbo.WIN63202407091256704579380.Serializer.Tracking;
 using Turbo.WIN63202407091256704579380.Serializer.User;
 using Turbo.WIN63202407091256704579380.Serializer.UserDefinedRoomEvents.WiredMenu;
 using Turbo.WIN63202407091256704579380.Serializers.RoomSettings;
-using CanCreateRoomMessage = Turbo.Packets.Outgoing.Navigator.CanCreateRoomMessage;
-using MessengerInitMessage = Turbo.Packets.Outgoing.FriendList.MessengerInitMessage;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -225,6 +221,9 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetExtendedProfileMessageEvent, new GetExtendedProfileMessageParser() },
         { (int)MessageEvent.GetRelationshipStatusInfoMessageEvent, new GetRelationshipStatusInfoMessageParser() },
         { (int)MessageEvent.GetSelectedBadgesMessageEvent, new GetSelectedBadgesMessageParser() }
+
+        //1645 Incoming RequestFriendMessageEvent
+        //1807 Incoming FriendRequestQuestCompleteMessageEvent
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>

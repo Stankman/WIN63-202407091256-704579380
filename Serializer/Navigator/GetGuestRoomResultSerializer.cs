@@ -13,7 +13,7 @@ public class GetGuestRoomResultSerializer() : AbstractSerializer<GetGuestRoomRes
         IRoomDetails roomDetails = message.Room.RoomDetails;
 
         packet.WriteBoolean(message.EnterRoom);
-        
+
         SerializeRoomData(packet, roomDetails);
 
         packet.WriteBoolean(message.IsRoomForward);
@@ -27,7 +27,7 @@ public class GetGuestRoomResultSerializer() : AbstractSerializer<GetGuestRoomRes
 
         SerializeChatSettings(packet, roomDetails);
     }
-    
+
     private void SerializeRoomData(IServerPacket packet, IRoomDetails roomDetails)
     {
         packet.WriteInteger(roomDetails.Id);
@@ -69,7 +69,7 @@ public class GetGuestRoomResultSerializer() : AbstractSerializer<GetGuestRoomRes
 
         bitmask += (int)RoomBitmaskType.ShowOwner; // if public room, no
 
-        if(roomDetails.AllowPets) bitmask += (int)RoomBitmaskType.AllowPets;
+        if (roomDetails.AllowPets) bitmask += (int)RoomBitmaskType.AllowPets;
 
         // bitmask += (int)RoomBitmaskType.Thumbnail;
         // bitmask += (int)RoomBitmaskType.GroupData;
@@ -78,7 +78,7 @@ public class GetGuestRoomResultSerializer() : AbstractSerializer<GetGuestRoomRes
 
         packet.WriteInteger(bitmask);
 
-        if((bitmask & (int)RoomBitmaskType.Thumbnail) > 0)
+        if ((bitmask & (int)RoomBitmaskType.Thumbnail) > 0)
         {
             packet.WriteString("");
         }

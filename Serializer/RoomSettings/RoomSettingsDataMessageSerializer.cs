@@ -12,9 +12,9 @@ public class RoomSettingsDataMessageSerializer() : AbstractSerializer<RoomSettin
         packet.WriteInteger(message.RoomDetails.Id);
         packet.WriteString(message.RoomDetails.Name);
         packet.WriteString(message.RoomDetails.Description);
-        packet.WriteInteger((int)message.RoomDetails.State);
+        packet.WriteInteger((int)message.RoomDetails.State); //doorMode
         packet.WriteInteger(0); // categoryId
-        packet.WriteInteger(message.RoomDetails.UsersMax); // current
+        packet.WriteInteger(message.RoomDetails.UsersMax); // current users
         packet.WriteInteger(50); // max users possible
         packet.WriteInteger(0); // total tags, string[]
         packet.WriteInteger((int)message.RoomDetails.TradeType);
@@ -30,5 +30,7 @@ public class RoomSettingsDataMessageSerializer() : AbstractSerializer<RoomSettin
         packet.WriteBoolean(false); //_allowNavigatorDynamicCats
 
         RoomModerationSettingsSerializer.Serialize(packet, message.RoomDetails);
+
+        packet.WriteBoolean(false); //hiddenByBC
     }
 }

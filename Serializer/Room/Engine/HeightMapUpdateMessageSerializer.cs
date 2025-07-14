@@ -10,7 +10,7 @@ public class HeightMapUpdateMessageSerializer() : AbstractSerializer<HeightMapUp
     protected override void Serialize(IServerPacket packet, HeightMapUpdateMessage message)
     {
         packet.WriteByte(message.TilesToUpdate.Count);
-        foreach(IRoomTile tile in message.TilesToUpdate) 
+        foreach (IRoomTile tile in message.TilesToUpdate)
         {
             packet.WriteByte(tile.Location.X);
             packet.WriteByte(tile.Location.Y);

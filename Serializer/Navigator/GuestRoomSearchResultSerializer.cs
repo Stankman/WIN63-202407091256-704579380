@@ -13,13 +13,13 @@ public class GuestRoomSearchResultSerializer() : AbstractSerializer<GuestRoomSea
     {
         packet.WriteInteger(message.SearchType);
         packet.WriteString(message.SearchParam);
-        
+
         packet.WriteInteger(message.Rooms.Count);
         foreach (var room in message.Rooms)
         {
             SerializeRoomData(packet, room);
         }
-        
+
         var hasAd = message.Ad != null;
         packet.WriteBoolean(hasAd);
         if (hasAd)
@@ -27,7 +27,7 @@ public class GuestRoomSearchResultSerializer() : AbstractSerializer<GuestRoomSea
             SerializeAdData(packet, message.Ad);
         }
     }
-    
+
     private void SerializeRoomData(IServerPacket packet, IRoom room)
     {
         packet.WriteInteger(room.RoomDetails.Id); // Room ID

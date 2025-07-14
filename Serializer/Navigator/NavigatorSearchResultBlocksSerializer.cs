@@ -14,7 +14,7 @@ public class NavigatorSearchResultBlocksSerializer() : AbstractSerializer<Naviga
         packet.WriteString(message.Filtering);  // var_365 equivalent
 
         // Serialize the number of result blocks (equivalent to _loc3_)
-        packet.WriteInteger(message.Results.Count); 
+        packet.WriteInteger(message.Results.Count);
 
         // Iterate through each result block and serialize it
         foreach (var resultBlock in message.Results)
@@ -22,7 +22,7 @@ public class NavigatorSearchResultBlocksSerializer() : AbstractSerializer<Naviga
             SerializeResultBlock(packet, resultBlock);
         }
     }
-    
+
     private void SerializeResultBlock(IServerPacket packet, ISearchResultData resultBlock)
     {
         packet.WriteString(resultBlock.SearchCode); // searchCodeOriginal equivalent
@@ -42,7 +42,7 @@ public class NavigatorSearchResultBlocksSerializer() : AbstractSerializer<Naviga
             SerializeGuestRoom(packet, room);
         }
     }
-    
+
     private void SerializeGuestRoom(IServerPacket packet, IRoom room)
     {
         packet.WriteInteger(room.Id);              // Room ID

@@ -11,7 +11,7 @@ public class ItemsMessageSerializer() : AbstractSerializer<ItemsMessage>(Message
     {
         packet.WriteInteger(message.OwnersIdToUsername.Count);
 
-        foreach(var entry in message.OwnersIdToUsername)
+        foreach (var entry in message.OwnersIdToUsername)
         {
             packet.WriteInteger(entry.Key);
             packet.WriteString(entry.Value);
@@ -19,7 +19,7 @@ public class ItemsMessageSerializer() : AbstractSerializer<ItemsMessage>(Message
 
         packet.WriteInteger(message.Objects.Count);
 
-        foreach(var obj in message.Objects)
+        foreach (var obj in message.Objects)
         {
             ItemDataSerializer.Serialize(packet, obj);
         }

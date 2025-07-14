@@ -11,8 +11,8 @@ public class HeightMapMessageSerializer() : AbstractSerializer<HeightMapMessage>
     {
         packet.WriteInteger(message.RoomModel.TotalX)
             .WriteInteger(message.RoomModel.TotalSize);
-        
-        foreach(IRoomTile tile in message.RoomMap.Tiles)
+
+        foreach (IRoomTile tile in message.RoomMap.Tiles)
         {
             packet.WriteShort(tile.RelativeHeight);
         }

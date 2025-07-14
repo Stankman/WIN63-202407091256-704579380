@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Turbo.Core.Packets.Messages;
+﻿using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.Perk;
 using Turbo.Packets.Serializers;
 
 namespace Turbo.WIN63202407091256704579380.Serializer.Perk;
 
-public class PerkAllowancesMessageSerializer () : AbstractSerializer<PerkAllowancesMessage>(MessageComposer.PerkAllowancesMessageComposer)
+public class PerkAllowancesMessageSerializer() : AbstractSerializer<PerkAllowancesMessage>(MessageComposer.PerkAllowancesMessageComposer)
 {
     protected override void Serialize(IServerPacket packet, PerkAllowancesMessage message)
     {
@@ -21,16 +16,16 @@ public class PerkAllowancesMessageSerializer () : AbstractSerializer<PerkAllowan
 
         packet.WriteString("CALL_ON_HELPERS");
         packet.WriteString("");
-        packet.WriteBoolean(message.CALL_ON_HELPERS);     
-        
+        packet.WriteBoolean(message.CALL_ON_HELPERS);
+
         packet.WriteString("MOUSE_ZOOM");
         packet.WriteString("");
         packet.WriteBoolean(message.MOUSE_ZOOM);
 
         packet.WriteString("NAVIGATOR_PHASE_TWO_2014");
         packet.WriteString("");
-        packet.WriteBoolean(message.NAVIGATOR_PHASE_TWO_2014);      
-        
+        packet.WriteBoolean(message.NAVIGATOR_PHASE_TWO_2014);
+
         packet.WriteString("HABBO_CLUB_OFFER_BETA");
         packet.WriteString("");
         packet.WriteBoolean(message.HABBO_CLUB_OFFER_BETA);
@@ -45,16 +40,16 @@ public class PerkAllowancesMessageSerializer () : AbstractSerializer<PerkAllowan
 
         packet.WriteString("BUILDER_AT_WORK");
         packet.WriteString("requirement.unfulfilled.group_membership");
-        packet.WriteBoolean(message.BUILDER_AT_WORK);       
-        
+        packet.WriteBoolean(message.BUILDER_AT_WORK);
+
         packet.WriteString("NAVIGATOR_ROOM_THUMBNAIL_CAMERA");
         packet.WriteString("");
         packet.WriteBoolean(message.NAVIGATOR_ROOM_THUMBNAIL_CAMERA);
 
         packet.WriteString("CAMERA");
         packet.WriteString("");
-        packet.WriteBoolean(message.CAMERA);        
-        
+        packet.WriteBoolean(message.CAMERA);
+
         packet.WriteString("UNITY_TRADE");
         packet.WriteString("requirement.unfulfilled.citizenship_level_3");
         packet.WriteBoolean(message.UNITY_TRADE);

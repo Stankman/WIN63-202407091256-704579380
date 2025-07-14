@@ -6,8 +6,8 @@ public static class RoomModerationSettingsSerializer
 {
     public static void Serialize(IServerPacket packet, IRoomDetails roomDetails)
     {
-        packet.WriteInteger((int)roomDetails.MuteType);
-        packet.WriteInteger((int)roomDetails.KickType);
-        packet.WriteInteger((int)roomDetails.BanType);
+        packet.WriteInteger((int)roomDetails.MuteType); //whoCanMute
+        packet.WriteInteger((int)roomDetails.KickType); //whoCanKick
+        packet.WriteInteger((int)roomDetails.BanType); //whoCanBan
     }
 }

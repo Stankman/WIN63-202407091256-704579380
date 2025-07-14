@@ -11,7 +11,7 @@ public class WhisperMessageParser : AbstractParser<WhisperMessage>
         var message = packet.PopString();
         var recipient = message.Split(" ")[0];
         var text = message[(recipient.Length + 1)..];
-        
+
         return new WhisperMessage
         {
             Text = text,

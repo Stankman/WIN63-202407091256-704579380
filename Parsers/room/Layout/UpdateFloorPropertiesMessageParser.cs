@@ -16,10 +16,10 @@ namespace Turbo.WIN63202407091256704579380.Parsers.Room.Layout
             var wallThickness = packet.PopInt();
             var floorThickness = packet.PopInt();
             int? wallHeight = null;
-            
+
             // Check if the packet has more data to read
             try { wallHeight = packet.PopInt(); } catch { /* this is disgusting */  }
-            
+
             return new UpdateFloorPropertiesMessage
             {
                 Model = model,

@@ -1,8 +1,7 @@
-﻿using Turbo.Core.Packets.Messages;
+﻿using Turbo.Core.Game.Catalog;
+using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.Catalog;
 using Turbo.Packets.Serializers;
-using Turbo.Core.Game.Catalog;
-using JetBrains.Annotations;
 
 namespace Turbo.WIN63202407091256704579380.Serializer.Catalog;
 public class CatalogIndexSerializer() : AbstractSerializer<CatalogIndexMessage>(MessageComposer.CatalogIndexMessageComposer)
