@@ -33,7 +33,7 @@ using Turbo.WIN63202407091256704579380.Parsers.Advertising;
 using Turbo.WIN63202407091256704579380.Parsers.Camera;
 using Turbo.WIN63202407091256704579380.Parsers.Catalog;
 using Turbo.WIN63202407091256704579380.Parsers.Competition;
-using Turbo.WIN63202407091256704579380.Parsers.Friendlist;
+using Turbo.WIN63202407091256704579380.Parsers.FriendList;
 using Turbo.WIN63202407091256704579380.Parsers.GroupForums;
 using Turbo.WIN63202407091256704579380.Parsers.Handshake;
 using Turbo.WIN63202407091256704579380.Parsers.Inventory.Achievements;
@@ -47,6 +47,7 @@ using Turbo.WIN63202407091256704579380.Parsers.NewNavigator;
 using Turbo.WIN63202407091256704579380.Parsers.Nft;
 using Turbo.WIN63202407091256704579380.Parsers.Notifications;
 using Turbo.WIN63202407091256704579380.Parsers.Preferences;
+using Turbo.WIN63202407091256704579380.Parsers.Quest;
 using Turbo.WIN63202407091256704579380.Parsers.room;
 using Turbo.WIN63202407091256704579380.Parsers.Room.Avatar;
 using Turbo.WIN63202407091256704579380.Parsers.Room.Chat;
@@ -220,10 +221,13 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetHabboGroupBadgesMessageEvent, new GetHabboGroupBadgesMessageParser() },
         { (int)MessageEvent.GetExtendedProfileMessageEvent, new GetExtendedProfileMessageParser() },
         { (int)MessageEvent.GetRelationshipStatusInfoMessageEvent, new GetRelationshipStatusInfoMessageParser() },
-        { (int)MessageEvent.GetSelectedBadgesMessageEvent, new GetSelectedBadgesMessageParser() }
+        { (int)MessageEvent.GetSelectedBadgesMessageEvent, new GetSelectedBadgesMessageParser() },
 
-        //1645 Incoming RequestFriendMessageEvent
-        //1807 Incoming FriendRequestQuestCompleteMessageEvent
+        //FriendList
+        { (int)MessageEvent.RequestFriendMessageEvent, new RequestFriendMessageParser() },
+
+        //Quest
+        { (int)MessageEvent.FriendRequestQuestCompleteMessageEvent, new FriendRequestQuestCompleteMessageParser() }
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
