@@ -6,11 +6,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PluginOutputPath>..\Turbo\bin\Debug\net8.0\plugins\</PluginOutputPath>
+        <BaseOutputPath></BaseOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="JetBrains.Annotations" Version="2024.3.0" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.7" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -53,7 +54,7 @@
     </Target>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="xcopy /Y &quot;$(TargetDir)$(TargetFileName)&quot; &quot;D:\dark_\Code\Turbo\Turbo\bin\Debug\net8.0\plugins&quot;" />
+      <Exec Command="xcopy /Y &quot;$(TargetDir)$(TargetFileName)&quot; &quot;D:\dark_\Code\Turbo\Turbo\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(TargetFileName)&quot; &quot;D:\dark_\Code\Turbo\Turbo\bin\Debug\net8.0\plugins&quot;" />
     </Target>
 
 </Project>

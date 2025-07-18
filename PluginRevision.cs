@@ -225,6 +225,9 @@ public class PluginRevision : IRevision
 
         //FriendList
         { (int)MessageEvent.RequestFriendMessageEvent, new RequestFriendMessageParser() },
+        { (int)MessageEvent.AcceptFriendMessageEvent, new AcceptFriendMessageParser() },
+        { (int)MessageEvent.DeclineFriendMessageEvent, new DeclineFriendMessageParser() },
+        { (int)MessageEvent.GetFriendRequestsMessageEvent, new GetFriendRequestsMessageParser() },
 
         //Quest
         { (int)MessageEvent.FriendRequestQuestCompleteMessageEvent, new FriendRequestQuestCompleteMessageParser() }
@@ -372,7 +375,13 @@ public class PluginRevision : IRevision
         { typeof(RelationshipStatusInfoMessage), new RelationshipStatusInfoSerializer() },
 
         //UserDefinedRoomEvents WiredMenu
-        {  typeof(WiredPermissionsMessage), new WiredPermissionsSerializer() }
+        {  typeof(WiredPermissionsMessage), new WiredPermissionsSerializer() },
+
+        //FriendList
+        { typeof(MessengerErrorMessage), new MessengerErrorSerializer() },
+        { typeof(NewFriendRequestMessage), new NewFriendRequestSerializer() },
+        { typeof(FriendListUpdateMessage), new FriendListUpdateSerializer() },
+        { typeof(FriendRequestsMessage), new FriendRequestsSerializer() }
 
         //MISSING PACKETS
         //2602	VersionCheckMessageComposer
