@@ -105,7 +105,6 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetIgnoredUsersMessageEvent, new GetIgnoredUsersMessageParser() },
         { (int)MessageEvent.GetUserNftChatStylesMessageEvent, new GetUserNftChatStylesMessageParser() },
         { (int)MessageEvent.GetMOTDMessageEvent, new GetMOTDMessageParser() },
-        { (int)MessageEvent.MessengerInitMessageEvent, new MessengerInitMessageParser() },
         { (int)MessageEvent.NewNavigatorInitEvent, new NewNavigatorInitParser() },
         { (int)MessageEvent.NewNavigatorSearchEvent, new NewNavigatorSearchParser() },
         { (int)MessageEvent.GetUserFlatCatsMessageEvent, new GetUserFlatCatsParser() },
@@ -224,16 +223,20 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetSelectedBadgesMessageEvent, new GetSelectedBadgesMessageParser() },
 
         //FriendList
-        { (int)MessageEvent.RequestFriendMessageEvent, new RequestFriendMessageParser() },
         { (int)MessageEvent.AcceptFriendMessageEvent, new AcceptFriendMessageParser() },
         { (int)MessageEvent.DeclineFriendMessageEvent, new DeclineFriendMessageParser() },
-        { (int)MessageEvent.GetFriendRequestsMessageEvent, new GetFriendRequestsMessageParser() },
-        { (int)MessageEvent.HabboSearchMessageEvent, new HabboSearchMessageParser() },
-        { (int)MessageEvent.GetMessengerHistoryEvent, new GetMessengerHistoryParser() },
-        { (int)MessageEvent.FriendListUpdateMessageEvent, new FriendListUpdateMessageParser() },
+        { (int)MessageEvent.FindNewFriendsMessageEvent, new FindNewFriendsMessageParser() },
         { (int)MessageEvent.FollowFriendMessageEvent, new FollowFriendMessageParser() },
-        { (int)MessageEvent.SendRoomInviteMessageEvent, new SendRoomInviteMessageParser() },
+        { (int)MessageEvent.FriendListUpdateMessageEvent, new FriendListUpdateMessageParser() },
+        { (int)MessageEvent.GetFriendRequestsMessageEvent, new GetFriendRequestsMessageParser() },
+        { (int)MessageEvent.GetMessengerHistoryEvent, new GetMessengerHistoryParser() },
+        { (int)MessageEvent.HabboSearchMessageEvent, new HabboSearchMessageParser() },
+        { (int)MessageEvent.MessengerInitMessageEvent, new MessengerInitMessageParser() },
         { (int)MessageEvent.RemoveFriendMessageEvent, new RemoveFriendMessageParser() },
+        { (int)MessageEvent.RequestFriendMessageEvent, new RequestFriendMessageParser() },
+        { (int)MessageEvent.SendMsgMessageEvent, new SendMsgMessageParser() },
+        { (int)MessageEvent.SendRoomInviteMessageEvent, new SendRoomInviteMessageParser() },
+        { (int)MessageEvent.VisitUserMessageEvent, new VisitUserMessageParser() },
 
         //Quest
         { (int)MessageEvent.FriendRequestQuestCompleteMessageEvent, new FriendRequestQuestCompleteMessageParser() }
