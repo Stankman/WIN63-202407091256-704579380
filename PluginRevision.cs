@@ -228,6 +228,12 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.AcceptFriendMessageEvent, new AcceptFriendMessageParser() },
         { (int)MessageEvent.DeclineFriendMessageEvent, new DeclineFriendMessageParser() },
         { (int)MessageEvent.GetFriendRequestsMessageEvent, new GetFriendRequestsMessageParser() },
+        { (int)MessageEvent.HabboSearchMessageEvent, new HabboSearchMessageParser() },
+        { (int)MessageEvent.GetMessengerHistoryEvent, new GetMessengerHistoryParser() },
+        { (int)MessageEvent.FriendListUpdateMessageEvent, new FriendListUpdateMessageParser() },
+        { (int)MessageEvent.FollowFriendMessageEvent, new FollowFriendMessageParser() },
+        { (int)MessageEvent.SendRoomInviteMessageEvent, new SendRoomInviteMessageParser() },
+        { (int)MessageEvent.RemoveFriendMessageEvent, new RemoveFriendMessageParser() },
 
         //Quest
         { (int)MessageEvent.FriendRequestQuestCompleteMessageEvent, new FriendRequestQuestCompleteMessageParser() }
@@ -381,7 +387,15 @@ public class PluginRevision : IRevision
         { typeof(MessengerErrorMessage), new MessengerErrorSerializer() },
         { typeof(NewFriendRequestMessage), new NewFriendRequestSerializer() },
         { typeof(FriendListUpdateMessage), new FriendListUpdateSerializer() },
-        { typeof(FriendRequestsMessage), new FriendRequestsSerializer() }
+        { typeof(FriendRequestsMessage), new FriendRequestsSerializer() },
+        { typeof(HabboSearchResultMessage), new HabboSearchResultSerializer() },
+        { typeof(RoomInviteErrorMessage), new RoomInviteErrorSerializer() },
+        { typeof(RoomInviteMessage), new RoomInviteSerializer() },
+        { typeof(ConsoleMessageHistoryMessage), new ConsoleMessageHistorySerializer() },
+        { typeof(FollowFriendFailedMessage), new FollowFriendFailedSerializer() },
+        { typeof(FriendNotificationMessage), new FriendNotificationSerializer() },
+        { typeof(InstantMessageErrorMessage), new InstantMessageErrorSerializer() },
+        { typeof(NewConsoleMessageMessage), new NewConsoleMessageSerializer() },
 
         //MISSING PACKETS
         //2602	VersionCheckMessageComposer

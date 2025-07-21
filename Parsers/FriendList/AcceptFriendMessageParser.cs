@@ -20,6 +20,9 @@ public class AcceptFriendMessageParser : AbstractParser<AcceptFriendMessage>
             friends.Add(userId);
         }
 
-        return new AcceptFriendMessage { Friends = friends};
+        return new AcceptFriendMessage
+        {
+            Friends = friends
+        };
     }
 }

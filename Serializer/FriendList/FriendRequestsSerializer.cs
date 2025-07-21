@@ -11,7 +11,9 @@ public class FriendRequestsSerializer() : AbstractSerializer<FriendRequestsMessa
         packet.WriteInteger(message.Requests.Count);
         packet.WriteInteger(message.Requests.Count);
 
-        foreach(var request in message.Requests)
+        Console.WriteLine($"Serializing {message.Requests.Count} friend requests.");
+
+        foreach (var request in message.Requests)
         {
             FriendRequestDataSerializer.Serialize(packet, request);
         }
