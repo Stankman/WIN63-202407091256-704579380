@@ -10,49 +10,19 @@ public class FriendListUpdateSerializer() : AbstractSerializer<FriendListUpdateM
     {
         packet.WriteInteger(0); //Categories Count
 
-        int totalFriends = 0;
+        packet.WriteInteger(message.FriendListUpdate.Count);
 
-        if(message.RemovedFriends != null)
+        foreach(var friend in message.FriendListUpdate)
         {
-            totalFriends += message.RemovedFriends.Count;
-        }
-
-        if(message.UpdatedFriends != null)
-        {
-            totalFriends += message.UpdatedFriends.Count;
-        }
-
-        if(message.AddedFriends != null)
-        {
-            totalFriends += message.AddedFriends.Count;
-        }
-
-        packet.WriteInteger(totalFriends);
-
-        if(message.RemovedFriends != null)
-        {
-            foreach (var removedFriendId in message.RemovedFriends)
+            if(friend.UpdateType.Equals(FriendListUpdateActionEnum.Added) || friend.UpdateType.Equals(FriendListUpdateActionEnum.Updated))
             {
-                packet.WriteInteger((int) FriendListUpdateActionEnum.Remove);
-                packet.WriteInteger(removedFriendId);
+                packet.WriteInteger((int)friend.UpdateType);
+                FriendDataSerializer.Serialize(packet, friend);
             }
-        }
-
-        if(message.UpdatedFriends != null)
-        {
-            foreach (var updatedFriend in message.UpdatedFriends)
+            else if(friend.UpdateType.Equals(FriendListUpdateActionEnum.Removed))
             {
-                packet.WriteInteger((int) FriendListUpdateActionEnum.Update);
-                FriendDataSerializer.Serialize(packet, updatedFriend);
-            }
-        }
-
-        if(message.AddedFriends != null)
-        {
-            foreach (var addedFriend in message.AddedFriends)
-            {
-                packet.WriteInteger((int) FriendListUpdateActionEnum.Add);
-                FriendDataSerializer.Serialize(packet, addedFriend);
+                packet.WriteInteger((int)friend.UpdateType);
+                packet.WriteInteger(friend.FriendId);
             }
         }
     }

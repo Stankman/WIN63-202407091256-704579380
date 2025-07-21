@@ -286,7 +286,6 @@ public class PluginRevision : IRevision
         { typeof(NavigatorSearchResultBlocksMessage), new NavigatorSearchResultBlocksSerializer() },
         { typeof(CreditBalanceMessage), new CreditBalanceSerializer() },
         { typeof(BonusRareInfoMessage), new BonusRareInfoSerializer() },
-        { typeof(FriendListFragmentMessage), new FriendListFragmentSerializer() },
         { typeof(AccountPreferencesMessage), new AccountPreferencesSerializer() },
         { typeof(CantConnectMessage), new CantConnectMessageSerializer() },
         { typeof(CloseConnectionMessage), new CloseConnectionMessageSerializer() },

@@ -7,21 +7,21 @@ using Turbo.Core.Packets.Messages;
 namespace Turbo.WIN63202407091256704579380.Serializer.FriendList;
 public static class FriendDataSerializer
 {
-    public static void Serialize(IServerPacket packet, IMessengerFriend messengerFriend)
+    public static void Serialize(IServerPacket packet, IMessengerFriendUpdate friend)
     {
-        packet.WriteInteger(messengerFriend.Friend.Id);
-        packet.WriteString(messengerFriend.Friend.Name);
-        packet.WriteInteger((int) messengerFriend.Friend.Gender);
-        packet.WriteBoolean(messengerFriend.Friend.Status.Equals(PlayerStatusEnum.Online)); //Is Online?
+        packet.WriteInteger(friend.FriendId);
+        packet.WriteString(friend.FriendData!.Friend.Name);
+        packet.WriteInteger((int) friend.FriendData!.Friend.Gender);
+        packet.WriteBoolean(friend.FriendData!.Friend.Status.Equals(PlayerStatusEnum.Online)); //Is Online?
         packet.WriteBoolean(true); //Can be followed?
-        packet.WriteString(messengerFriend.Friend.Figure);
+        packet.WriteString(friend.FriendData!.Friend.Figure);
         packet.WriteInteger(0);
-        packet.WriteString(messengerFriend.Friend.Motto);
+        packet.WriteString(friend.FriendData!.Friend.Motto);
         packet.WriteString(""); //RealName
         packet.WriteString(""); //Facebook ID
         packet.WriteBoolean(false); //Persisted Message User ?? What's this?
         packet.WriteBoolean(false); //Friend is VIP Member?
         packet.WriteBoolean(false); //Is Pocket Habbo User?
-        packet.WriteShort((int) messengerFriend.RelationType); //Relationship Status
+        packet.WriteShort((int) friend.FriendData!.RelationType); //Relationship Status
     }
 }
