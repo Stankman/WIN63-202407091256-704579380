@@ -286,7 +286,6 @@ public class PluginRevision : IRevision
         { typeof(NavigatorSearchResultBlocksMessage), new NavigatorSearchResultBlocksSerializer() },
         { typeof(CreditBalanceMessage), new CreditBalanceSerializer() },
         { typeof(BonusRareInfoMessage), new BonusRareInfoSerializer() },
-        { typeof(MessengerInitMessage), new MessengerInitSerializer() },
         { typeof(FriendListFragmentMessage), new FriendListFragmentSerializer() },
         { typeof(AccountPreferencesMessage), new AccountPreferencesSerializer() },
         { typeof(CantConnectMessage), new CantConnectMessageSerializer() },
@@ -387,18 +386,20 @@ public class PluginRevision : IRevision
         {  typeof(WiredPermissionsMessage), new WiredPermissionsSerializer() },
 
         //FriendList
-        { typeof(MessengerErrorMessage), new MessengerErrorSerializer() },
-        { typeof(NewFriendRequestMessage), new NewFriendRequestSerializer() },
-        { typeof(FriendListUpdateMessage), new FriendListUpdateSerializer() },
-        { typeof(FriendRequestsMessage), new FriendRequestsSerializer() },
-        { typeof(HabboSearchResultMessage), new HabboSearchResultSerializer() },
-        { typeof(RoomInviteErrorMessage), new RoomInviteErrorSerializer() },
-        { typeof(RoomInviteMessage), new RoomInviteSerializer() },
         { typeof(ConsoleMessageHistoryMessage), new ConsoleMessageHistorySerializer() },
         { typeof(FollowFriendFailedMessage), new FollowFriendFailedSerializer() },
+        { typeof(FriendListFragmentMessage), new FriendListFragmentSerializer() },
+        { typeof(FriendListUpdateMessage), new FriendListUpdateSerializer() },
         { typeof(FriendNotificationMessage), new FriendNotificationSerializer() },
+        { typeof(FriendRequestsMessage), new FriendRequestsSerializer() },
+        { typeof(HabboSearchResultMessage), new HabboSearchResultSerializer() },
         { typeof(InstantMessageErrorMessage), new InstantMessageErrorSerializer() },
+        { typeof(MessengerErrorMessage), new MessengerErrorSerializer() },
+        { typeof(MessengerInitMessage), new MessengerInitSerializer() },
         { typeof(NewConsoleMessageMessage), new NewConsoleMessageSerializer() },
+        { typeof(NewFriendRequestMessage), new NewFriendRequestSerializer() },
+        { typeof(RoomInviteErrorMessage), new RoomInviteErrorSerializer() },
+        { typeof(RoomInviteMessage), new RoomInviteSerializer() },
 
         //MISSING PACKETS
         //2602	VersionCheckMessageComposer
